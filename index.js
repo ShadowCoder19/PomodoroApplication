@@ -26,10 +26,12 @@ function startTimer() {
         countDownTimer = setInterval(updateTimer, 1000);
     }
     isPaused = false;
+    saveTimerState();
 }
 
 function pauseTimer() {
     isPaused = true;
+    saveTimerState();
 }
 
 function resetTimer() {
@@ -39,7 +41,9 @@ function resetTimer() {
     const workDuration = parseInt(workDurationInput) * 60; // Convert to seconds
     timeLeft = workDuration; // Reset to work duration
     isWorkTimer = true;
+    isPaused = false;
     updateDisplay();
+    saveTimerState();
 }
 
 function updateTimer() {
@@ -47,6 +51,7 @@ function updateTimer() {
         if (timeLeft > 0) {
             timeLeft--;
             updateDisplay();
+            saveTimerState();
         } else {
             clearInterval(countDownTimer);
             countDownTimer = null;
@@ -67,6 +72,24 @@ function updateDisplay() {
     const minutes = Math.floor(timeLeft / 60);
     const seconds = timeLeft % 60;
     document.getElementById('pomodoroClock').textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+}
+
+function saveTimerState() {
+    localStorage.setItem('timeLeft', timeLeft);
+    localStorage.setItem('isPaused', isPaused);
+    localStorage.setItem('isWorkTimer', isWorkTimer);
+}
+
+function loadTimerState() {
+    if (localStorage.getItem('timeLeft') !== null) {
+        timeLeft = parseInt(localStorage.getItem('timeLeft'));
+        isPaused = localStorage.getItem('isPaused') === 'true';
+        isWorkTimer = localStorage.getItem('isWorkTimer') === 'true';
+        updateDisplay();
+        if (!isPaused && timeLeft > 0) {
+            countDownTimer = setInterval(updateTimer, 1000);
+        }
+    }
 }
 
 // To-Do List Functions
@@ -132,6 +155,7 @@ document.getElementById('clearTasksButton').addEventListener('click', clearTasks
 document.addEventListener('DOMContentLoaded', (event) => {
     console.log('DOM fully loaded and parsed'); // Debug log
     loadTasks();
+    loadTimerState();
 });
 
 // Initialize display
