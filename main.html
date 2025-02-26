@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Pomodoro App</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        
+        <div id="pomodoroHeader">
+            <h1>PomodoroApp</h1>
+        </div>
+
+        <div id="pomodoroApp">
+            <div id="pomodoroTimer">
+                <div id="pomodoroTimerDisplayContainer">
+                    <div id="pomodoroTimerDisplay">
+                        <p id="pomodoroClock"></p>
+                     </div>
+                </div>
+                <div id="pomodoroTimerControls">
+                    <button id="pomodoroTimerStart">Start</button>
+                    <button id="pomodoroTimerPause">Pause</button>
+                    <button id="pomodoroTimerReset">Reset</button>
+                </div>
+            </div>
+            
+            <div id="pomodoroSettings">
+                <div id="pomodoroSettingsWork">
+                    <label for="pomodoroSettingsWorkDuration">Work Duration</label>
+                    <input type="number" id="pomodoroSettingsWorkDuration" value="25">
+                </div>
+                <div id="pomodoroSettingsBreak">
+                    <label for="pomodoroSettingsBreakDuration">Break Duration</label>
+                    <input type="number" id="pomodoroSettingsBreakDuration" value="5">
+                </div>
+            </div>
+        </div>
+        <div id="pomodoroTasksContainer">
+            <div id="pomodoroTasks">
+                <h2>Tasks</h2>
+                <div id="buttonContainer">
+                    <button id="addTaskButton">Add Task</button>
+                    <button id="clearTasksButton">Clear Tasks</button> 
+                </div>
+            </div>
+            <div id="newTaskContainer">
+                <input type="text" id="newTaskInput" placeholder="Add New task Here">
+                <ul id="taskList"></ul>
+            </div>
+        </div>
+        
+    
+        <script src="main.js"></script>
+    </body>
+</html>

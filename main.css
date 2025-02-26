@@ -1,0 +1,163 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(244deg, #9CF6F6 0.73%, #B3E9E9 36.72%, #E67194 99.59%);
+    height: 100vh;
+    margin: 60px;  
+    padding: 0;
+    display: grid;
+    grid-template-areas: 
+    "tasks header"
+    "tasks app";
+    grid-template-columns: 2fr 2fr;
+    grid-template-rows: 15% 85%;
+    grid-gap: 50px;
+    column-gap: 100px;
+}
+
+button{
+    background-color: #D2406B;
+    font-family: KoHo;
+    color: white;
+    border: 1px solid #000000;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    color: #000000;
+    font-family: KoHo;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+input[type="text"]{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #000000;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+input[type="number"]{
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #000000;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    text-align: center;
+}
+
+input[type="checkbox"]{
+    margin-right: 10px;
+    font-family: Koho;
+    font-size: 16px;
+}
+
+label{
+    font-family: KoHo;
+    font-size: 16px;
+    color: blacks;
+}
+
+
+.completed {
+    text-decoration: line-through;
+    color: #000000;
+}
+
+#pomodoroApp{
+    grid-area: app;
+    grid-row-start: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#pomodoroTimerControls{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+#pomodoroTimer{
+    margin-bottom: 10px;
+}
+
+#pomodoroTimerDisplay{
+    background-color: #D2406B;
+    border-radius: 15px;
+}
+
+#pomodoroTimerDisplayContainer{
+   margin: 0px 70px 0px 70px;
+}
+
+#pomodoroClock{
+    font-size: 42px;
+    font-weight: 700;
+    color: #FFFFFF;
+    text-align: center;
+    font-family: KoHo;
+    padding: 15px;
+}
+
+#pomodoroHeader{ 
+    grid-area: header;
+    display: flex;
+    justify-content: center;
+}
+
+#pomodoroTasks{
+    grid-area: tasks;
+    grid-row-start: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 10px 0px 0px 30px;
+}
+
+#newTaskContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 60px;
+}
+
+#pomodoroTasksContainer{
+    background-color: #D2406B;
+    border-radius: 15px;
+    grid-area: tasks;  
+    margin: 0px 70px 0px 70px;
+    padding: 10px;
+}
+
+#pomodoroSettingsWork{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+}
+
+#pomodoroSettingsBreak{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+}
+
+#addTaskButton{
+    background-color: #FFFFFF;
+    color: black;
+}
+
+#clearTasksButton{
+    background-color: #FFFFFF;
+    color: black;
+}
